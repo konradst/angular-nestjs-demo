@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, AfterViewInit, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
-import { Title } from '@angular/platform-browser';
+import { Title, TransferState, makeStateKey } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +16,21 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
+    private transferState: TransferState,
     private _cdr: ChangeDetectorRef,
     private titleService: Title
   ) {
     this.isServer = isPlatformServer(this.platformId);
     this.titleService.setTitle(this.title);
+
+    const key = makeStateKey<string>('somekey');
+    if (this.isServer) {
+      this.transferState.set(key, 'value transferred from server');
+    }
+    if (!this.isServer) {
+      console.warn(this.transferState.get(key, 'default value'));
+    }
+
   }
 
   ngAfterViewInit() {
