@@ -1,0 +1,29 @@
+<section class="section section--carousel">
+
+    <!-- carousel -->
+    <ng-container *ngIf="!isServer">
+        <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="auto"
+            proportion="25" slides="5" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
+            [useMouseWheel]="false" orientation="ltr">
+
+            <!-- carousel slide A -->
+            <mat-carousel-slide overlayColor="#ffffff40" [hideOverlay]="true" image="/static/a.jpg">
+                <div fxFill fxLayout="row" fxLayoutAlign="end center">
+                    <p fxFlex="30%"></p>
+                    <p fxFlex="40%">SLIDE A</p>
+                    <p fxFlex="30%"></p>
+                </div>
+            </mat-carousel-slide>
+
+            <!-- carousel slide B -->
+            <mat-carousel-slide overlayColor="#ffffff40" [hideOverlay]="true" image="/static/b.jpg">
+                <div fxFill fxLayout="row" fxLayoutAlign="end center">
+                    <p fxFlex="30%"></p>
+                    <p fxFlex="40%">SLIDE B</p>
+                    <p fxFlex="30%"></p>
+                </div>
+            </mat-carousel-slide>
+
+        </mat-carousel>
+    </ng-container>
+</section>
