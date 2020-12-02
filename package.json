@@ -34,6 +34,7 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/typeorm": "^7.1.5",
     "@ngmodule/material-carousel": "^0.6.0",
+    "@ngrx/effects": "^10.1.0",
     "@ngrx/store": "^10.1.0",
     "@nguniversal/express-engine": "^10.1.0",
     "class-transformer": "^0.2.3",
