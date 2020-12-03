@@ -1,1 +1,7 @@
-<p>gallery works!</p>
+<p>Photo list:</p>
+<ul>
+    <li *ngFor="let photo of photos$ | async">
+        <img width="256" alt="Yoda" src="/static/c.jpg">
+        {{photo.name}}
+    </li>
+</ul>

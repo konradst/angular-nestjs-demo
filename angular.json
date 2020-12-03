@@ -184,5 +184,8 @@
       }
     }
   },
-  "defaultProject": "angular-nestjs-demo"
+  "defaultProject": "angular-nestjs-demo",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
